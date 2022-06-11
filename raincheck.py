@@ -26,3 +26,4 @@ sms = "Happy birthday! It has rained " + t + " inches in the past three days."
 
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 print(account_sid)
+print("test tester testest")
