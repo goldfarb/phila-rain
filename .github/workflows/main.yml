@@ -23,13 +23,23 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Check-out devops repository
-      uses: actions/checkout@v2
-      with:
-        repository: goldfarb/raincheck
-        token: ${{ secrets.GITHUB_TOKEN }}
-        path: ${{ env.DEVOPS_DIR }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import os
+            print("Directory contents:")
+            for f in os.listdir():
+                print(f)
 
-    - name: Hello World
-      run: python ${{ env.DEVOPS_DIR }}/test.py
-      shell: sh
+#    - name: Check-out devops repository
+#      uses: actions/checkout@v2
+#      with:
+#        repository: goldfarb/raincheck
+#        token: ${{ secrets.GITHUB_TOKEN }}
+#        path: ${{ env.DEVOPS_DIR }}
+
+#    - name: Hello World
+#      run: python ${{ env.DEVOPS_DIR }}/test.py
+#      shell: sh
