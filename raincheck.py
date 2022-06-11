@@ -33,3 +33,10 @@ message = client.messages \
          from_=os.environ['FROM_NUM'],
          to=os.environ['TO_NUM']
      )
+
+message = client.messages \
+    .create(
+         body=sms,
+         from_=os.environ['FROM_NUM'],
+         to=os.environ['TO_NUM_TWO']
+     )

@@ -5,6 +5,9 @@ name: rain check
 # Controls when the workflow will run
 on:
   workflow_dispatch:
+  schedule:
+    - cron:  '3 12 * * *'
+
 
 jobs:
   build:
@@ -29,4 +32,6 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           FROM_NUM: ${{ secrets.FROM_NUM }}
           TO_NUM: ${{ secrets.TO_NUM }}
+          TO_NUM_TWO: ${{ secrets.TO_NUM_TWO }}
+
         run: python raincheck.py
