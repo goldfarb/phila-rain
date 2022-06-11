@@ -25,7 +25,6 @@ jobs:
           pip install -r requirements.txt
       - name: execute py script # run raincheck.py to get the latest data
         env:
-          TEST_VAL: "james"
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           FROM_NUM: ${{ secrets.FROM_NUM }}
