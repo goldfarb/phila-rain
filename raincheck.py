@@ -31,6 +31,6 @@ client = Client(account_sid, auth_token)
 message = client.messages \
     .create(
          body=sms,
-         from_='+13262223190',
-         to='+14134463861'
+         from_=os.environ.get('FROM_NUM'),
+         to=os.environ.get('TO_NUM')
      )
