@@ -23,13 +23,6 @@ s = df['6hr']
 t = str(f'{s.sum():.2f}')
 sms = "Happy birthday! It has rained " + t + " inches in the past three days."
 
-account_sid = os.environ['TWILIO_ACCOUNT_SID']
-auth_token = os.environ['TWILIO_AUTH_TOKEN']
-client = Client(account_sid, auth_token)
 
-message = client.messages \
-    .create(
-         body=sms,
-         from_=os.environ['FROM_NUM'],
-         to=os.environ['TO_NUM']
-     )
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+print(account_sid)
